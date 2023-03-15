@@ -31,7 +31,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.lucye
-    
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.lucye
@@ -51,7 +51,7 @@ PRODUCT_COPY_FILES += \
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
-		
+
 # Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_lucye.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_common.conf
@@ -59,3 +59,8 @@ PRODUCT_COPY_FILES += \
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8996.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8996.conf
+
+# Power
+PRODUCT_PACKAGES += \
+		android.hardware.power@1.2 \
+		android.hardware.power@1.2.vendor
