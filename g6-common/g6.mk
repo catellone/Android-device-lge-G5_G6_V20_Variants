@@ -28,6 +28,14 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.lucye
+    
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.lucye
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2880
 TARGET_SCREEN_WIDTH := 1440
@@ -36,27 +44,13 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.lucye
-
 # HDR
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_tm_config.xml
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.lucye
-
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
-
-#Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-		android.hardware.power.stats@1.0-service.mock \
-		vendor.qti.hardware.perf@2.0.vendor
 		
 # Sensors
 PRODUCT_COPY_FILES += \
